@@ -22,7 +22,7 @@ export default async function Home() {
     .order('created_at', { ascending: false })
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-[#0f172a] text-white">
       <Navbar user={user} />
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ export default async function Home() {
               <AddBookmarkForm user={user} />
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">Your Bookmarks</h3>
+              <h3 className="text-2xl leading-6 font-bold text-white mb-4">Your Bookmarks</h3>
               <BookmarkList initialBookmarks={bookmarks || []} user={user} />
             </div>
           </div>

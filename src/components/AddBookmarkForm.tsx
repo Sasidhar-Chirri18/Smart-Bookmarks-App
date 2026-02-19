@@ -50,11 +50,11 @@ export default function AddBookmarkForm({ user }: { user: any }) {
     }
 
     return (
-        <div className="bg-white shadow sm:rounded-lg p-6 mb-6">
-            <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">Add New Bookmark</h3>
+        <div className="bg-slate-800/50 backdrop-blur-xl border border-white/10 shadow-xl sm:rounded-2xl p-8 mb-6">
+            <h3 className="text-2xl leading-6 font-bold text-white mb-4">Add New Bookmark</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="title" className="block text-lg font-medium text-slate-200">
                         Title
                     </label>
                     <input
@@ -62,14 +62,14 @@ export default function AddBookmarkForm({ user }: { user: any }) {
                         name="title"
                         id="title"
                         required
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                        className="mt-1 focus:ring-blue-800 focus:border-blue-800 block w-full shadow-sm sm:text-sm border-white/10 rounded-xl p-3 bg-slate-900/50 text-white placeholder-slate-500"
                         placeholder="My Cool Bookmark"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
                 <div>
-                    <label htmlFor="url" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="url" className="block text-lg font-medium text-slate-200">
                         URL
                     </label>
                     <input
@@ -77,7 +77,7 @@ export default function AddBookmarkForm({ user }: { user: any }) {
                         name="url"
                         id="url"
                         required
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                        className="mt-1 focus:ring-blue-800 focus:border-blue-800 block w-full shadow-sm sm:text-sm border-white/10 rounded-xl p-3 bg-slate-900/50 text-white placeholder-slate-500"
                         placeholder="https://example.com"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
@@ -87,12 +87,12 @@ export default function AddBookmarkForm({ user }: { user: any }) {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400"
+                        className="w-full inline-flex justify-center py-3 px-4 border border-transparent shadow-lg text-sm font-bold rounded-xl text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-slate-700 disabled:text-slate-400 transition-all hover:scale-[1.02] active:scale-[0.98]"
                     >
                         {loading ? 'Adding...' : 'Add Bookmark'}
                     </button>
                 </div>
-                {msg && <p className={`text-sm ${msg.includes('Error') ? 'text-red-500' : 'text-green-500'}`}>{msg}</p>}
+                {msg && <p className={`text-sm ${msg.includes('Error') ? 'text-red-400' : 'text-green-400'}`}>{msg}</p>}
             </form>
         </div>
     )
