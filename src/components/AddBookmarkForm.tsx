@@ -36,10 +36,7 @@ export default function AddBookmarkForm({ user }: { user: any }) {
                 setTitle('')
                 setUrl('')
                 setMsg('Bookmark added!')
-                // Router refresh is handled by Realtime in the list component, 
-                // but we can also refresh here just in case or for optimistic UI.
-                // For this app, we rely on Realtime for the list update, 
-                // but clearing form is important.
+                router.refresh()
             }
         } catch (err) {
             console.error(err)
